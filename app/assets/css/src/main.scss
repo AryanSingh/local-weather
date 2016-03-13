@@ -1,0 +1,57 @@
+body{
+  background-color: #161616;
+  height: 400px;
+  .headline{
+    position: relative;
+    color:white;
+    text-align: center;
+    margin: auto;
+    top: 10%;
+    h1{
+      font-size: 4em;
+      font-weight: 600;
+      margin: 10px;
+    }
+    .tempDisp{
+      margin: 20px;
+      a{
+        text-decoration: none;
+      }
+      a:hover{
+        text-decoration: none;
+        color: #0C3C66
+      }
+      span{
+        font-size: 2em;
+        #unit{
+          color: #0165BD;
+        }
+      }
+    }
+  }
+  #data{
+    color: white;
+    text-align: center;
+    margin: auto;
+  }
+  .btn{
+    margin: auto;
+  }
+
+  @-webkit-keyframes rotate {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to { 
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  #sun{
+        font-size: 4em;
+        margin: 20px;
+        -webkit-animation-name:             rotate; 
+        -webkit-animation-duration:         8s; 
+        -webkit-animation-iteration-count:  infinite;
+        -webkit-animation-timing-function: linear;
+      }  
+}

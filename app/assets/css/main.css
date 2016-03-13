@@ -1,0 +1,44 @@
+body {
+  background-color: #161616;
+  height: 400px; }
+  body .headline {
+    position: relative;
+    color: white;
+    text-align: center;
+    margin: auto;
+    top: 10%; }
+    body .headline h1 {
+      font-size: 4em;
+      font-weight: 600;
+      margin: 10px; }
+    body .headline .tempDisp {
+      margin: 20px; }
+      body .headline .tempDisp a {
+        text-decoration: none; }
+      body .headline .tempDisp a:hover {
+        text-decoration: none;
+        color: #0C3C66; }
+      body .headline .tempDisp span {
+        font-size: 2em; }
+        body .headline .tempDisp span #unit {
+          color: #0165BD; }
+  body #data {
+    color: white;
+    text-align: center;
+    margin: auto; }
+  body .btn {
+    margin: auto; }
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+  body #sun {
+    font-size: 4em;
+    margin: 20px;
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 8s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear; }
+
+/*# sourceMappingURL=main.css.map */
