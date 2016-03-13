@@ -1,10 +1,24 @@
-  var Celsius =0;
-  var Fahrenheit =0;
 $(document).ready(function(){
    lat =0;
    lon = 0;
   var ural ="";
   var appId = "45e37fb5d84a5a7b45514f289d76575f";
+  // if(navigator.geolocation){
+  //   navigator.geolocation.getCurrentPosition(function(position){
+  //     $("#data").html("latitude:" + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
+  //     lat = (position.coords.latitude);
+  //     lon = (position.coords.longitude);
+  //     ural += ("https://api.forecast.io/forecast/" + appId + "37.8267,-122.423") ;
+  //     console.log(ural);
+  //   });
+  // };
+  $.ajax({
+    url: ural,
+    dataType: 'jsonp',
+    success: function(dataWeGotViaJsonp){
+      console.log(dataWeGotViaJsonp);
+    }
+  })
 
   $.getJSON('http://ipinfo.io',function(data){
     console.log(data);
@@ -26,9 +40,7 @@ $(document).ready(function(){
         dataType: 'jsonp',
         success: function(dataWegetfromjsonp){
           console.log(dataWegetfromjsonp);
-          Fahrenheit = dataWegetfromjsonp.currently.apparentTemperature;
-          Celsius = Math.round(((dataWegetfromjsonp.currently.apparentTemperature -32)/1.8)*100)/100;
-          $("#temp").html(Fahrenheit+ " &deg;");
+          $("#temp").html(dataWegetfromjsonp.currently.apparentTemperature + " &deg;");
           $("#unit").html("F");
           $("#summary").html(dataWegetfromjsonp.currently.summary);
         }
@@ -41,14 +53,13 @@ $(document).ready(function(){
     var unit = $("#unit").html();
     console.log(unit);
     var content = $("#temp").html().split(" ")[0];
-
     content = parseInt(content);
     if(unit=="F"){
-      $("#temp").html(Celsius + " &deg;");
+      $("#temp").html((content-32)/1.8 + " &deg;");
       $("#unit").html("C");
     }
     else{
-      $("#temp").html(Fahrenheit + " &deg;");
+      $("#temp").html((content*1.8 + 32) + " &deg;");
       $("#unit").html("F");
     }
   });
